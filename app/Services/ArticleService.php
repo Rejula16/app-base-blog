@@ -17,7 +17,7 @@ class ArticleService implements ModelViewConnector {
     private $indexTable;
 
     public function __construct()
-    {
+    { 
         $this->modelClass = Article::class;
         $this->indexTable = new IndexTable();
         $this->selectionEnabled = true;
@@ -43,18 +43,18 @@ class ArticleService implements ModelViewConnector {
     {
         return [];
         // // Example:
-        // return [
-        //     'author' => [
-        //         'search_column' => 'id',
-        //         'filter_column' => 'id',
-        //         'sort_column' => 'id',
-        //     ],
+        return [
+            'author' => [
+                'search_column' => 'id',
+                'filter_column' => 'id',
+                'sort_column' => 'id',
+            ],
             // 'reviewScore' => [
             //     'search_column' => 'score',
             //     'filter_column' => 'id',
             //     'sort_column' => 'id',
             // ],
-        // ];
+        ];
     }
     protected function getPageTitle(): string
     {
@@ -202,7 +202,9 @@ class ArticleService implements ModelViewConnector {
 
     private function getQuery()
     {
+      
         return $this->modelClass::query();
+   
         // // Example:
         // return $this->modelClass::query()->with([
         //     'author' => function ($query) {
