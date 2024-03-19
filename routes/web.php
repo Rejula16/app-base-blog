@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ProfileController;
@@ -33,6 +34,10 @@ Route::middleware('auth')->group(function () {
     RouteHelper::getEasyRoutes(
         modelName: 'AppSetting',
         controller: AppSettingsController::class
+    );
+    RouteHelper::getEasyRoutes(
+        modelName: 'Article',
+        controller: ArticleController::class
     );
 
     Route::get('/roles-permissions', [RoleController::class, 'rolesPermissions'])->name('roles.permissions');

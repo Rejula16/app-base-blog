@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call(SystemPermissionsSeeder::class);
         $this->call(SystemRolesSeeder::class);
         $this->call(AppSettingSeeder::class);
+        $this->call(CategorySeeder::class);
+        $this->call(HashTagSeeder::class);
         $this->call(UserSeeder::class);
     }
 }
